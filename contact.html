@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cantact</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <ul class="nav navbar-expand-sm bg-dark navbar-dark fixed-top">
+<!--<div class="navbar-brand"><b>Dipesh</b></div>-->
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="service.html">SERVICES</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="project.html">PROJECT</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="gallery.html">GALLERY</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="contact.html">CONTACT</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="container-fluid" style="margin-top: 33px;">
+  <div class="row">
+	<div class="col-md-6" style="margin-top: 36px">
+	<br><h1 style="text-align: center;font-family: Courier New, monospace;">Contact Us</h1><br>  
+	<div style="margin-left: 44px">  
+	<h4 style="font-family: Parkavenue, cursive;">Name:</h4>
+	<input class="form-control" type="text" placeholder="Name" style="margin-left: 77px;width: 77%" id="name"><br>
+      </div>
+    <div style="margin-left: 44px">
+	<h4 style="font-family: Parkavenue, cursive;">Mobile No</h4>
+	<input class="form-control" placeholder="Mobile No" style="margin-left: 77px;width: 77%" type="text" id="mobile"><br>
+	  </div>
+	<div style="margin-left: 44px">
+	<h4 style="font-family: Parkavenue, cursive;">Message</h4>
+	<textarea class="form-control" placeholder="Message" style="margin-left: 77px;width:77%" type="text" id="mess"></textarea>
+	</div>
+	<br><br>
+	<button class="btn btn-info" id="click" style="margin-right: 88px;width: 22%;float: right;"><i>Submit</i></button>
+    
+	</div>
+
+	<div class="col-md-6" style="margin-top: 36px">
+		<h3>Address:</h3>
+		<p style="font-size: 20px;margin-left: 111px">Rajasthan,Rajasthan</p>
+       <h3>Mobile No:</h3>
+		<p style="font-size: 20px;margin-left: 111px">+91 1234567890</p>
+		<h3>E-mail:</h3>
+		<p style="font-size: 20px;margin-left: 111px">dipeshsuthar111@gmail.com</p>
+	</div>
+</div>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	$('#click').click(function(){
+		var name=$('#name').val();
+		var mobile=$('#mobile').val();
+		var mess=$('#mess').val();
+		$.ajax({
+			url:"insert.php",
+			type:"post",
+			data:{n1:name,m1:mobile,m2:mess},
+			success:function(a1){
+                alert(a1);
+			}
+		})
+	})
+</script>
